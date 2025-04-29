@@ -17,6 +17,8 @@ header {
     padding: 15px 30px;
     background-color: #01112d;
     position: sticky;
+    z-index: 1000; /* ensures it stays above other elements */
+    top: 0;
 }
 
 .logo {
@@ -409,14 +411,14 @@ button:hover .star-6 {
     padding: 20px;
     box-shadow: 0 4px 8px rgba(22, 22, 22, 0.1);
     border-radius: 10px;
-    background: #f4ebeb;
+    background: #2f4fe165;
     border: 2px #02050e;
 }
 
 .feature-card i {
     font-size: 40px;
     margin-bottom: 15px;
-    color: #0077b6;
+    color: #070707;
 }
 
 .feature-card h3 {
@@ -716,6 +718,7 @@ footer {
     gap: 20px;
     padding: 40px 20px;
     min-height: 100vh; /* Full height of the viewport */
+    overflow: hidden; /* Prevent overflow */
 }
 
 .service-item {
@@ -725,6 +728,7 @@ footer {
     background: #edeef3;
     box-shadow: 15px 15px 30px rgb(23, 31, 49),
                 -15px -15px 30px rgb(65, 125, 209);
+                overflow: hidden; /* Prevent overflow */
                 
 }
 
@@ -771,6 +775,32 @@ font-size: 1.2rem;
   transform: scale(1.05);
 }
 
+/* Add responsive behavior */
+@media (max-width: 768px) {
+  .services-list {
+      grid-template-columns: 1fr; /* Stack items vertically on smaller screens */
+  }
+  .photo-wall {
+    grid-template-columns: 1fr 1fr; /* Adjust to two columns on smaller screens */
+}
+
+.service-item p{
+  
+
+font-size: 0.8rem;
+}
+
+.service-item h3{
+
+font-size: 1.2rem;
+
+}
+
+.acm p{
+  
+  font-size: 0.8rem;
+  }
+}
 
 /* Contact Form */
 /* .contact-form-section {
