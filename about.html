@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <title>About Us |The Algo Horizon</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">THE ALGO HORIZON</div>
+        
+        <!-- Hamburger icon -->
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+        
+        <!-- Navigation menu -->
+        <nav id="navbar">
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="hero-slider">
+        <div class="slides">
+            <div class="slide active" style="background-image: url('images/slider1.jpg');">
+              
+            </div>
+            <div class="slide" style="background-image: url('images/slider2.jpg');">
+                <h1>Luxury in Nature</h1>
+            </div>
+            <div class="slide" style="background-image: url('images/slider3.jpg');">
+                <h1>Your Perfect Getaway</h1>
+            </div>
+            <div class="slide" style="background-image: url('images/slider4.jpg');">
+                <h1>Have Fun and Fun</h1>
+            </div>
+        </div>
+        <div class="dots">
+            <span class="dot active" onclick="currentSlide(0)"></span>
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+        </div>
+    </section>
+    
+
+<section class="about-section">
+    <div class="about-content">
+        <h2>Our Story</h2>
+        <p>Welcome to the Aldo Horizon, where timeless elegance meets modern comfort. Our story began in [Year Established], 
+            nestled in the heart of [City or Region], with a simple vision: to offer travelers a place where they feel truly at home.
+
+            What started as a charming family-run guesthouse has evolved over the years into a full-service hotel, 
+            renowned for its warm hospitality, personalized service, and commitment to excellence. Each corner of 
+            our hotel reflects a legacy of care, attention to detail, and passion for providing memorable experiences.
+            
+            Throughout the decades, we have welcomed guests from all walks of life—vacationers, business travelers, 
+            and those simply seeking a serene getaway. As the world changed, we adapted, renovating and expanding our 
+            facilities while preserving the heritage and character that define us.
+            
+            Today, [Hotel Name] continues to stand as a symbol of tradition and innovation. Whether you're here for a
+             relaxing escape or a special occasion, we invite you to become a part of our story—one that celebrates comfort, culture, and connection.
+             <section class="why-us-section">
+                <h2>Why Choose Us?</h2>
+                <div class="card-container">
+                  <div class="card">
+                    <div class="icon">🏙️</div>
+                    <h3>Prime Location</h3>
+                    <p>Stay in the heart of the city, close to major landmarks, shopping, and dining spots.</p>
+                  </div>
+                  <div class="card">
+                    <div class="icon">🌟</div>
+                    <h3>Exceptional Service</h3>
+                    <p>Our team is committed to offering warm hospitality and personalized attention to every guest.</p>
+                  </div>
+                  <div class="card">
+                    <div class="icon">🛏️</div>
+                    <h3>Stylish Comfort</h3>
+                    <p>Relax in modern, elegant rooms with top-tier amenities to ensure a restful stay.</p>
+                  </div>
+                  <div class="card">
+                    <div class="icon">🍽️</div>
+                    <h3>Delicious Dining</h3>
+                    <p>Savor locally inspired dishes and international cuisine at our in-house restaurant.</p>
+                  </div>
+                </div>
+              </section>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 Blue Lagoon Villa | Designed by Siluni Silva</p>
+</footer>
+
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navbar = document.getElementById('navbar');
+
+    menuToggle.addEventListener('click', () => {
+        navbar.classList.toggle('active');
+    });
+
+
+    
+  let slideIndex = 0;
+  const slides = document.querySelectorAll('.slide');
+  const dots = document.querySelectorAll('.dot');
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === index);
+      dots[i].classList.toggle('active', i === index);
+    });
+  }
+
+  function currentSlide(index) {
+    slideIndex = index;
+    showSlide(slideIndex);
+  }
+
+  function autoSlide() {
+    slideIndex = (slideIndex + 1) % slides.length;
+    showSlide(slideIndex);
+  }
+
+  setInterval(autoSlide, 4000); // Auto-slide every 4 seconds
+
+
+</script>
+
+
+</body>
+</html>
